@@ -10,7 +10,8 @@ const PORT = process.env.PORT;
 app.use(express.json()); //parse incoming requests with JSON payloads
 app.use(cookieParser()); //parse incoming requests with cookie payloads
 
-app.use("/api/auth", authRoutes);  //common path
+app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);//common path
 
 app.listen(PORT, () => {
     console.log(`Server is running on port http:localhost:${PORT}/api/auth/`);
